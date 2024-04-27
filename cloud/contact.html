@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>brew's cafe</title>
+   <style>
+    .banner {
+      height: 100px; 
+      background-image: url('banner.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: rgba(240, 247, 246, 0.893);
+    }
+
+    .topnav a {
+      float: left;
+      color:black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .topnav a:hover {
+      background-color: rgb(212, 201, 201);
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #e8f0edea;
+      color: rgb(6, 5, 5);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+
+    p {
+      font-size: large;
+    }
+
+    .contact-container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .contact-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .contact-submit {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ccc;
+    }
+
+    .contact-submit:hover {
+      background-color: #bbb;
+    }
+   </style>
+</head>
+<body>
+  <header class="banner"></header>
+
+  <div class="topnav">
+    <a class="active" href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="contact-container">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom: 10px">Contact</h1>
+      <p><strong>Find us at:</strong> <br><br>
+      #7-24, Brew's Cafe <br>
+      12th Cross, That Street <br>
+      Mangaluru - 574142 <br>
+      or call us at 05050515-122330</p> 
+      <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special, or just send us a message:</p>
+      <form class="contact-form" onsubmit="alert('Reservation successful!')">
+        <p>Name <input class="contact-input" type="text" placeholder="Name" required name="Name"></p>
+        <p>Number of people <input class="contact-input" type="number" placeholder="How many people" required name="People"></p>
+        <p>Date <input class="contact-input" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+        <p>Message <input class="contact-input" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="contact-submit" type="submit">Submit</button></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

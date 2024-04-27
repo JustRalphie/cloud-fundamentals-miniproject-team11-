@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>brew's cafe</title>
+<style>
+.banner {
+  height: 100px; 
+  background-image: url('banner.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(240, 247, 246, 0.893);
+}
+
+.topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: rgb(212, 201, 201);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #e8f0edea;
+  color: rgb(6, 5, 5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  font-family: Arial;
+}
+
+h1{
+  padding-left: 10px;
+}
+
+h4 {
+  font-size: larger;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  padding: 10px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  background-color: white;
+  padding: 10px;
+  height: 750px; 
+}
+
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btnpadding {
+  padding-left: 10px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<header class="banner"></header>
+
+<div class="topnav">
+  <a class="active" href="home.html">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</div>
+
+<h1>MENU</h1>
+<div class="btnpadding" id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('burger')">Burger</button>
+  <button class="btn" onclick="filterSelection('pizza')">Pizza</button>
+  <button class="btn" onclick="filterSelection('drinks')">Drinks</button>
+  <button class="btn" onclick="filterSelection('specials')">Specials</button>
+</div>
+
+<div class="row">
+  <div class="column burger">
+    <div class="content">
+      <img src="boorgir1.jpg" alt="Mountains" style="width:100%">
+      <h4>Boorgir</h4>
+    </div>
+  </div>
+  <div class="column burger">
+    <div class="content">
+      <img src="boorgir2.webp" alt="Lights" style="width:100%">
+      <h4>Veg burger</h4>
+    </div>
+  </div>
+  <div class="column burger">
+    <div class="content">
+      <img src="boorgir3.webp" alt="Nature" style="width:100%">
+      <h4>Zinger burger</h4>
+    </div>
+  </div>
+
+  <div class="column pizza">
+    <div class="content">
+      <img src="pija1.jpg" alt="Car" style="width:100%">
+      <h4>Retro pizza</h4>
+    </div>
+  </div>
+  <div class="column pizza">
+    <div class="content">
+      <img src="pija2.jpg" alt="Car" style="width:100%">
+      <h4>Pepperoni pizza</h4>
+    </div>
+  </div>
+  <div class="column pizza">
+    <div class="content">
+      <img src="pija3.jpg" alt="Car" style="width:100%">
+      <h4>Classic pizza</h4>
+    </div>
+  </div>
+
+  <div class="column drinks">
+    <div class="content">
+      <img src="coffee.webp" alt="People" style="width:100%">
+      <h4>Coffee</h4>
+    </div>
+  </div>
+  <div class="column drinks">
+    <div class="content">
+      <img src="t.jpg" alt="People" style="width:100%">
+      <h4>Tea</h4>
+    </div>
+  </div>
+  <div class="column drinks">
+    <div class="content">
+      <img src="juice.jpg" alt="People" style="width:100%">
+      <h4>Juice</h4>
+    </div>
+  </div>
+
+  <div class="column specials">
+    <div class="content">
+      <img src="special.jpg" alt="People" style="width:100%">
+      <h4>Club sandwich</h4>
+    </div>
+  </div>
+  <div class="column specials">
+    <div class="content">
+      <img src="special1.webp" alt="People" style="width:100%">
+      <h4>Burrito</h4>
+    </div>
+  </div>
+  <div class="column specials">
+    <div class="content">
+      <img src="special2.jpg" alt="People" style="width:100%">
+      <h4>juice</h4>
+    </div>
+  </div>
+</div>
+<script>
+  filterSelection("all") 
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</body>
+</html>
